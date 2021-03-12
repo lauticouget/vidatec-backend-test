@@ -1,0 +1,22 @@
+{
+  "name": "vidatec-backend-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauticouget/vidatec-backend-test.git"
+  },
+  "author": "lautaro couget",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lauticouget/vidatec-backend-test/issues"
+  },
+  "homepage": "https://github.com/lauticouget/vidatec-backend-test#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
