@@ -3,8 +3,8 @@ const router = express.Router();
 const userService = require('./userService');
 
 // routes
-router.post('/authenticate', authenticate);
-router.get('/', getAll);
+router.post('/users/authenticate', authenticate);
+router.get('/users', getAll);
 
 function authenticate(req, res, next) {
     userService.authenticate(req.body)

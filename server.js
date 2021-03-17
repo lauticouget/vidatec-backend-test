@@ -3,16 +3,19 @@ const express = require('express');
 const app = express();
 // const cors = require('cors');
 const bodyParser = require('body-parser');
-const jwt = require('./helpers/jwt');
+const authMiddleware = require('./middlewares/authMiddleware');
 const errorHandler = require('./helpers/errorHandler');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(jwt());
-
-app.use('/users', require('./users/userController'));
-app.use('/todos', require('./todos/todosController'));
+// app.use(jwt());
+app.use('/api', authMiddleware(), [
+    require('./users/userController'),
+    require('./todos/todosController')
+]);
+// app.use('/api/users', require('./users/userController'));
+// app.use('/api/todos', require('./todos/todosController'));
 
 // global error handler
 app.use(errorHandler);

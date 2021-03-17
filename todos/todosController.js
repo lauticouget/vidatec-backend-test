@@ -3,10 +3,10 @@ const router = express.Router();
 const todosService = require('./todosService');
 
 // routes
-router.get('/', getAll);
-router.post('/', add);
-router.delete('/', remove);
-router.put('/', edit);
+router.get('/todos', getAll);
+router.post('/todos', add);
+router.delete('/todos', remove);
+router.put('/todos', edit);
 
 function getAll(req, res, next) {
     todosService.getAll()
