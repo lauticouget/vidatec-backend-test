@@ -20,7 +20,7 @@ async function addTodo({ task, completed }) {
   return { task, completed }
 }
 
-async function deleteTodo({ task }) {
+async function deleteTodo(task) {
 
   const index = jsonDB.getIndex("/todos", `${task}`, "task");
 

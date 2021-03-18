@@ -5,7 +5,7 @@ const todosService = require('./todosService');
 // routes
 router.get('/todos', getAll);
 router.post('/todos', add);
-router.delete('/todos', remove);
+router.delete('/todos/:task', remove);
 router.put('/todos', edit);
 
 function getAll(req, res, next) {
@@ -21,7 +21,7 @@ function add(req, res, next) {
 }
 
 function remove(req, res, next) {
-    todosService.deleteTodo(req.body)
+    todosService.deleteTodo(req.params.task)
         .then(todo => res.json({ success: true, message: "Todo deleted" }))
         .catch(next);
 }
