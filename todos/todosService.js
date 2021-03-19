@@ -34,7 +34,7 @@ async function deleteTodo(task) {
 async function editTodo({ task, completed }) {
   const index = jsonDB.getIndex("/todos", `${task}`, "task");
   
-  if (!task || !completed) throw "missing data in request"
+  if (!task || (typeof completed !== 'boolean')) throw "missing data in request"
   else if (index >= 0) jsonDB.push(`/todos[${index}]`, {
     task,
     completed
